@@ -10,7 +10,7 @@ Representar visualmente a tela utilizada para o cadastro de uma nova tarefa.
 
 ## Tela
 
-![Protótipo da tela de cadastro](./tela-cadastro-tarefa.png)
+![Protótipo da tela de cadastro](./PSM1.png)
 
 ## Campos
 
