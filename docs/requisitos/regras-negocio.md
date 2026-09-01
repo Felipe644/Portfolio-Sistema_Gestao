@@ -1,4 +1,4 @@
-# Regras de Negócio
+# Regras de Negócio Relacionadas
 
 ## RB01 — Título obrigatório
 
