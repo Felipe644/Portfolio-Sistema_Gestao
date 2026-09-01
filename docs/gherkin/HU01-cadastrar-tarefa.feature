@@ -1,96 +1,76 @@
-# HU01 — Cadastrar Tarefa
+# Gherkin — HU01 Cadastrar Tarefa
 
-## História de Usuário
+## Funcionalidade
 
-**Como** usuário do sistema,  
-**quero** cadastrar uma nova tarefa,  
-**para** registrar e acompanhar uma atividade.
+**Cadastrar tarefa**
 
----
+### História de Usuário
 
-## Objetivo
-
-Permitir que o usuário cadastre uma nova tarefa no sistema,
-informando os dados necessários para seu acompanhamento.
+> **Como** usuário do sistema  
+> **Quero** cadastrar uma nova tarefa  
+> **Para** registrar e acompanhar uma atividade
 
 ---
 
-## Requisito Funcional relacionado
-
-- [RF01 — Cadastrar tarefa](../requisitos/requisitos-funcionais.md#rf01--cadastrar-tarefa)
-
----
-
-## Regras de Negócio relacionadas
-
-- [RB01 — Título obrigatório](../requisitos/regras-negocio.md#rb01--título-obrigatório)
-- [RB02 — Descrição obrigatória](../requisitos/regras-negocio.md#rb02--descrição-obrigatória)
-- [RB03 — Responsável obrigatório](../requisitos/regras-negocio.md#rb03--responsável-obrigatório)
-- [RB04 — Prioridade obrigatória](../requisitos/regras-negocio.md#rb04--prioridade-obrigatória)
-- [RB05 — Status inicial](../requisitos/regras-negocio.md#rb05--status-inicial)
-- [RB06 — Responsável único](../requisitos/regras-negocio.md#rb06--responsável-único)
-
----
-
-## Critérios de Aceitação
-
-### CA01 — Cadastro realizado com sucesso
+## Contexto
 
 **Dado** que o usuário esteja autenticado  
-**E** esteja na tela de cadastro de tarefa  
-**E** informe todos os campos obrigatórios com dados válidos  
-**Quando** confirmar o cadastro  
+**E** esteja na tela de cadastro de tarefa
+
+---
+
+## Cenário 01 — Cadastrar tarefa com dados válidos
+
+**Quando** informar um título válido  
+**E** informar uma descrição válida  
+**E** selecionar um responsável  
+**E** selecionar uma prioridade  
+**E** confirmar o cadastro  
 **Então** a tarefa deve ser cadastrada com sucesso  
-**E** o sistema deve apresentar uma mensagem de confirmação.
+**E** o sistema deve apresentar uma mensagem de confirmação  
+**E** a tarefa deve ser disponibilizada na listagem
 
-### CA02 — Título não informado
+---
 
-**Dado** que o usuário esteja autenticado  
-**E** esteja na tela de cadastro de tarefa  
-**Quando** deixar o título vazio  
+## Cenário 02 — Cadastrar tarefa sem título
+
+**Quando** deixar o campo título vazio  
+**E** preencher os demais campos obrigatórios  
 **E** confirmar o cadastro  
 **Então** o sistema deve impedir o cadastro  
-**E** informar que o título é obrigatório.
+**E** informar que o título é obrigatório
 
-### CA03 — Descrição não informada
+---
 
-**Dado** que o usuário esteja autenticado  
-**E** esteja na tela de cadastro de tarefa  
-**Quando** deixar a descrição vazia  
+## Cenário 03 — Cadastrar tarefa sem descrição
+
+**Quando** informar um título válido  
+**E** deixar o campo descrição vazio  
+**E** preencher os demais campos obrigatórios  
 **E** confirmar o cadastro  
 **Então** o sistema deve impedir o cadastro  
-**E** informar que a descrição é obrigatória.
+**E** informar que a descrição é obrigatória
 
-### CA04 — Responsável não informado
+---
 
-**Dado** que o usuário esteja autenticado  
-**E** esteja na tela de cadastro de tarefa  
-**Quando** não informar um responsável  
+## Cenário 04 — Cadastrar tarefa sem responsável
+
+**Quando** informar um título válido  
+**E** informar uma descrição válida  
+**E** não selecionar um responsável  
+**E** preencher os demais campos obrigatórios  
 **E** confirmar o cadastro  
 **Então** o sistema deve impedir o cadastro  
-**E** informar que o responsável é obrigatório.
+**E** informar que o responsável é obrigatório
 
-### CA05 — Status inicial
+---
 
-**Dado** que o usuário esteja autenticado  
-**E** esteja na tela de cadastro de tarefa  
-**E** informe todos os dados obrigatórios  
-**Quando** confirmar o cadastro  
+## Cenário 05 — Cadastrar tarefa com status inicial
+
+**Quando** informar todos os dados obrigatórios  
+**E** confirmar o cadastro  
 **Então** a tarefa deve ser cadastrada com sucesso  
-**E** seu status inicial deve ser "A Fazer".
-
----
-
-## Dependências
-
-- O usuário deve estar autenticado.
-- Deve existir pelo menos um usuário disponível para ser definido como responsável.
-
----
-
-## Resultado Esperado
-
-Após o cadastro realizado com sucesso, a tarefa deve ser disponibilizada na listagem de tarefas.
+**E** o status da tarefa deve ser **"A Fazer"**
 
 ---
 
@@ -98,8 +78,7 @@ Após o cadastro realizado com sucesso, a tarefa deve ser disponibilizada na lis
 
 | Artefato | Identificação |
 |---|---|
-| Requisito Funcional | RF01 |
-| História de Usuário | HU01 |
+| Requisito Funcional | RF01 — Cadastrar tarefa |
+| História de Usuário | HU01 — Cadastrar tarefa |
 | Critérios de Aceitação | CA01 a CA05 |
 | Regras de Negócio | RB01 a RB06 |
-| Gherkin | [HU01 — Cadastrar Tarefa](../gherkin/HU01-cadastrar-tarefa.feature) |
