@@ -2,10 +2,8 @@
 
 ## História de Usuário
 
-**Como** usuário do sistema,
-
-**quero** cadastrar uma nova tarefa,
-
+**Como** usuário do sistema,  
+**quero** cadastrar uma nova tarefa,  
 **para** registrar e acompanhar uma atividade.
 
 ---
@@ -17,9 +15,20 @@ informando os dados necessários para seu acompanhamento.
 
 ---
 
-## Requisito relacionado
+## Requisito Funcional relacionado
 
-- RF01 — Cadastrar tarefa
+- [RF01 — Cadastrar tarefa](../requisitos/requisitos-funcionais.md#rf01--cadastrar-tarefa)
+
+---
+
+## Regras de Negócio relacionadas
+
+- [RB01 — Título obrigatório](../requisitos/regras-negocio.md#rb01--título-obrigatório)
+- [RB02 — Descrição obrigatória](../requisitos/regras-negocio.md#rb02--descrição-obrigatória)
+- [RB03 — Responsável obrigatório](../requisitos/regras-negocio.md#rb03--responsável-obrigatório)
+- [RB04 — Prioridade obrigatória](../requisitos/regras-negocio.md#rb04--prioridade-obrigatória)
+- [RB05 — Status inicial](../requisitos/regras-negocio.md#rb05--status-inicial)
+- [RB06 — Responsável único](../requisitos/regras-negocio.md#rb06--responsável-único)
 
 ---
 
@@ -29,36 +38,46 @@ informando os dados necessários para seu acompanhamento.
 
 **Dado** que o usuário esteja autenticado  
 **E** esteja na tela de cadastro de tarefa  
-**E** informe todos os campos obrigatórios  
+**E** informe todos os campos obrigatórios com dados válidos  
 **Quando** confirmar o cadastro  
-**Então** a tarefa deve ser cadastrada  
-**E** o sistema deve apresentar uma mensagem de sucesso.
+**Então** a tarefa deve ser cadastrada com sucesso  
+**E** o sistema deve apresentar uma mensagem de confirmação.
 
-### CA02 — Campos obrigatórios não preenchidos
+### CA02 — Título não informado
 
-**Dado** que o usuário esteja na tela de cadastro de tarefa  
-**Quando** tentar salvar a tarefa sem preencher um campo obrigatório  
+**Dado** que o usuário esteja autenticado  
+**E** esteja na tela de cadastro de tarefa  
+**Quando** deixar o título vazio  
+**E** confirmar o cadastro  
 **Então** o sistema deve impedir o cadastro  
-**E** informar quais campos precisam ser preenchidos.
+**E** informar que o título é obrigatório.
 
-### CA03 — Responsável não informado
+### CA03 — Descrição não informada
 
-**Dado** que o usuário esteja na tela de cadastro de tarefa  
+**Dado** que o usuário esteja autenticado  
+**E** esteja na tela de cadastro de tarefa  
+**Quando** deixar a descrição vazia  
+**E** confirmar o cadastro  
+**Então** o sistema deve impedir o cadastro  
+**E** informar que a descrição é obrigatória.
+
+### CA04 — Responsável não informado
+
+**Dado** que o usuário esteja autenticado  
+**E** esteja na tela de cadastro de tarefa  
 **Quando** não informar um responsável  
-**E** tentar salvar a tarefa  
+**E** confirmar o cadastro  
 **Então** o sistema deve impedir o cadastro  
 **E** informar que o responsável é obrigatório.
 
----
+### CA05 — Status inicial
 
-## Regras de Negócio
-
-- A tarefa deve possuir um título.
-- A tarefa deve possuir uma descrição.
-- A tarefa deve possuir um responsável.
-- A tarefa deve possuir uma prioridade.
-- A tarefa deve possuir um status.
-- Uma tarefa deve possuir apenas um responsável.
+**Dado** que o usuário esteja autenticado  
+**E** esteja na tela de cadastro de tarefa  
+**E** informe todos os dados obrigatórios  
+**Quando** confirmar o cadastro  
+**Então** a tarefa deve ser cadastrada com sucesso  
+**E** seu status inicial deve ser "A Fazer".
 
 ---
 
@@ -71,5 +90,16 @@ informando os dados necessários para seu acompanhamento.
 
 ## Resultado Esperado
 
-Após o cadastro realizado com sucesso, a tarefa deve ser
-disponibilizada na listagem de tarefas.
+Após o cadastro realizado com sucesso, a tarefa deve ser disponibilizada na listagem de tarefas.
+
+---
+
+## Rastreabilidade
+
+| Artefato | Identificação |
+|---|---|
+| Requisito Funcional | RF01 |
+| História de Usuário | HU01 |
+| Critérios de Aceitação | CA01 a CA05 |
+| Regras de Negócio | RB01 a RB06 |
+| Gherkin | [HU01 — Cadastrar Tarefa](../gherkin/HU01-cadastrar-tarefa.feature) |
