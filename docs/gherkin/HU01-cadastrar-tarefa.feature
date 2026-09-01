@@ -23,7 +23,7 @@ informando os dados necessários para seu acompanhamento.
 
 ## Regras de Negócio relacionadas
 
-- [RB01 — Título obrigatório](../requisitos/regras-negocio.md#rb01--título-obrigatório)
+- [RB01 — Título obrigatório](https://www.google.com/search?q=tradutor&rlz=1C1GCEA_enBR1132BR1132&oq=&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQsyMTE1NzUzajBqN6gCCLACAfEFT8QR5KPOxTTxBU_EEeSjzsU0&sourceid=chrome&source=chrome.ob&ie=UTF-8)
 - [RB02 — Descrição obrigatória](../requisitos/regras-negocio.md#rb02--descrição-obrigatória)
 - [RB03 — Responsável obrigatório](../requisitos/regras-negocio.md#rb03--responsável-obrigatório)
 - [RB04 — Prioridade obrigatória](../requisitos/regras-negocio.md#rb04--prioridade-obrigatória)
